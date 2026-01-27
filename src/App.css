@@ -1,0 +1,920 @@
+/* ===== Hero Page Layout ===== */
+.hero-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #Fffefd; /* warm cream */
+}
+
+/* ===== Header / Navigation ===== */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: clamp(40px, 6vh, 60px); 
+  gap: clamp(16px, 2.5vh, 24px);
+}
+
+.site-name {
+  font-family: "SA Long Beach", cursive, sans-serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 600;
+  color: #834a3b; /* warm brown */
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+/* Navigation Links */
+.nav {
+  display: flex;
+  gap: clamp(50px, 6vw, 200px);
+  align-items: center;
+}
+
+.nav-link {
+  font-family: "SA Long Beach", cursive, sans-serif;
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 400;
+  color: #d5b0a6; /* lighter warm brown */
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  transition: color 0.3s ease, opacity 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #7D5A3D;
+  opacity: 1;
+}
+
+/* ===== Hero Text Section ===== */
+.hero-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0.3;
+  padding: clamp(20px, 8vh, 10px) clamp(24px, 1vw, 48px);
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.hero-text p {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(10px, 4vw, 30px);
+  font-weight: 200;
+  line-height: 1.5;
+  color: #B89080; /* muted warm brown / dusty rose */
+  max-width: 23ch;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* ===== Decorative Illustration Row (Bears) ===== */
+.decorative-images {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: clamp(24px, 5vw, 60px);
+  padding: 0 clamp(20px, 4vw, 40px);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.bear-image {
+  width: clamp(300px, 28vw, 600px);
+  height: auto;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+.bear-1 {
+  transform: translateY(0%) rotate(15deg);
+}
+
+.bear-2 {
+  transform: translateY(10%) rotate(0deg);
+}
+
+.bear-3 {
+  transform: translateY(0%) rotate(-10deg);
+}
+
+/* ===== WORKS Section Background Transition ===== */
+.works-background-container {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  margin-top: -350px;
+  min-height: 300px;
+}
+
+.background-layer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: top center;
+  pointer-events: none;
+  display: block;
+}
+
+.light-pink-layer {
+  top: -150px;
+  z-index: 3;
+}
+
+.dark-pink-layer {
+  top: -120px;
+  z-index: 4;
+}
+
+/* ===== Responsive Adjustments for Hero ===== */
+@media (max-width: 768px) {
+  .header {
+    padding-top: clamp(32px, 5vh, 48px);
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(16px, 3vw, 20px);
+  }
+
+  .hero-text {
+    padding: clamp(48px, 8vh, 80px) clamp(20px, 4vw, 32px);
+  }
+
+  .hero-text p {
+    max-width: 24ch;
+  }
+
+  .decorative-images {
+    gap: clamp(16px, 4vw, 40px);
+    height: clamp(140px, 20vh, 200px);
+  }
+
+  .bear-image {
+    width: clamp(140px, 28vw, 220px);
+  }
+
+  .light-pink-layer {
+    top: -100px;
+  }
+
+  .dark-pink-layer {
+    top: -70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-name {
+    font-size: clamp(28px, 8vw, 36px);
+  }
+
+  .nav-link {
+    font-size: clamp(16px, 4vw, 18px);
+  }
+
+  .hero-text p {
+    font-size: clamp(22px, 6vw, 28px);
+    max-width: 26ch;
+  }
+
+  .decorative-images {
+    height: clamp(120px, 18vh, 160px);
+    gap: clamp(12px, 3vw, 24px);
+  }
+
+  .bear-image {
+    width: clamp(120px, 32vw, 160px);
+  }
+
+  .works-background-container {
+    min-height: 200px;
+  }
+
+  .light-pink-layer {
+    top: -60px;
+  }
+
+  .dark-pink-layer {
+    top: -40px;
+  }
+}
+
+/* ===== WORKS Section ===== */
+.works-section {
+  position: relative;
+  min-height: 600px;
+  margin-top: clamp(-150px, -20vh, -100px);
+  padding: clamp(30px, 10vh, 100px) clamp(40px, 6vw, 80px);
+  background: transparent;
+}
+
+.works-header {
+  position: absolute;
+  top: clamp(200px, 28vh, 320px); 
+  left: clamp(30px, 6vw, 80px);
+  z-index: 5;
+}
+
+.works-title {
+  font-family: "SA Long Beach", cursive, sans-serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 600;
+  color: #834a3b;
+  text-transform: uppercase;
+  margin: 0 0 clamp(8px, 1.5vh, 12px) 0;
+  letter-spacing: 0.02em;
+}
+
+.works-subtitle {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(13px, 1.8vw, 16px);
+  font-weight: 400;
+  color: #7D5A3D;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Category Circle Buttons */
+.category-buttons {
+  position: absolute;
+  left: clamp(40px, 6vw, 80px);
+  top: clamp(340px, 45vh, 460px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(50px, 4vh, 45px);
+  z-index: 5;
+}
+
+.category-circle-button {
+  position: relative;
+  width: clamp(150px, 16vw, 200px);
+  height: clamp(150px, 16vw, 200px);
+  border-radius: 9999px;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 0 3px white, 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.category-circle-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 3px white, 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.category-circle-button:active {
+  transform: scale(1.05);
+}
+
+/* Circle outline effect */
+.circle-outline {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Bear container - clipped to circle */
+.bear-container {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bear-badge-image {
+  width: 110%;
+  height: 110%;
+  object-fit: contain;
+  object-position: center;
+  transform: translateY(20%);
+}
+
+/* Curved text SVG */
+.curved-text-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.curved-label {
+  font-family: "SA Long Beach", cursive, sans-serif;
+  font-size: clamp(13px, 1.7vw, 16px);
+  font-weight: 600;
+  fill: white;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Active category button state */
+.category-circle-button.active {
+  box-shadow: 0 0 0 4px white, 0 6px 24px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+/* ===== Works Content Area (Right Side) ===== */
+.works-content-area {
+  position: relative;
+  margin-left: clamp(240px, 28vw, 340px);
+  padding: clamp(150px, 22vh, 260px) clamp(30px, 4vw, 60px) clamp(60px, 8vh, 80px);
+  z-index: 4;
+}
+
+/* Category Summary Box */
+.category-summary-box {
+  background: white;
+  padding: clamp(20px, 3vh, 28px) clamp(24px, 3.5vw, 36px);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: clamp(32px, 5vh, 48px);
+  width: 100%;
+  max-width: clamp(1000px, 70vw, 1200px);
+  text-align: center;
+}
+
+.category-summary-title {
+  font-family: "SA Long Beach", cursive, sans-serif;
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 600;
+  color: #834a3b;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 0.02em;
+  border-bottom: 2px dotted #d5b0a6;
+  margin-bottom: clamp(12px, 2vh, 16px);
+}
+
+.category-summary-text {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(14px, 1.8vw, 18px);
+  font-weight: 400;
+  color: #7D5A3D;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(28px, 4.5vh, 48px) clamp(24px, 3.5vw, 40px);
+  align-items: start;
+}
+
+/* Polaroid-style Project Cards */
+.project-card-polaroid {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card-polaroid:hover {
+  transform: translateY(-8px) rotate(0deg);
+}
+
+.project-card-polaroid:active {
+  transform: translateY(-4px) rotate(0deg);
+}
+
+/* Polaroid Frame */
+.polaroid-frame {
+  background: white;
+  padding: clamp(14px, 2vw, 18px);
+  padding-bottom: clamp(30px, 6.0vh, 10px);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.project-card-polaroid:hover .polaroid-frame {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25), 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Polaroid Image Container */
+.polaroid-image-container {
+  width: 100%;
+  aspect-ratio: 25/26;
+  background: #f5f5f5;
+  overflow: hidden;
+  border-radius: 1px;
+  margin-bottom: clamp(10px, 1.5vh, 15px);
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Project Title */
+.project-title {
+  font-family: "SA Long Beach", cursive, sans-serif;
+  font-size: clamp(13px, 1.6vw, 16px);
+  font-weight: 500;
+  color: #7D5A3D;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  margin-bottom: clamp(10px, 1.5vh, 14px);
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+}
+
+/* Polaroid Tags */
+.polaroid-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+}
+
+.polaroid-tag {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(9px, 1.2vw, 11px);
+  color: #B89080;
+  background: transparent;
+  border: 1px solid #E8D5CF;
+  border-radius: 10px;
+  padding: 4px 10px;
+  font-weight: 400;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+/* Responsive adjustments for WORKS section */
+@media (max-width: 768px) {
+  .works-section {
+    min-height: 500px;
+    margin-top: clamp(-120px, -18vh, -80px);
+    padding: clamp(50px, 8vh, 80px) clamp(30px, 5vw, 60px);
+  }
+
+  .works-header {
+    top: clamp(160px, 24vh, 260px);
+    left: clamp(30px, 5vw, 60px);
+  }
+
+  .category-buttons {
+    left: clamp(30px, 5vw, 60px);
+    top: clamp(280px, 40vh, 360px);
+    gap: clamp(20px, 3vh, 26px);
+  }
+
+  .category-circle-button {
+    width: clamp(100px, 18vw, 140px);
+    height: clamp(100px, 18vw, 140px);
+  }
+
+  .curved-label {
+    font-size: clamp(12px, 2.2vw, 14px);
+  }
+
+  .works-content-area {
+    margin-left: clamp(180px, 24vw, 260px);
+    padding: clamp(120px, 19vh, 210px) clamp(24px, 3.5vw, 48px) clamp(50px, 8vh, 80px);
+  }
+
+  .category-summary-box {
+    margin-bottom: clamp(28px, 4vh, 38px);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: clamp(24px, 4vh, 36px) clamp(20px, 3vw, 32px);
+  }
+
+  .polaroid-image-container {
+    aspect-ratio: 4 / 5;
+  }
+
+  .polaroid-frame {
+    padding-bottom: clamp(38px, 5.5vh, 52px);
+  }
+
+  .project-title {
+    font-size: clamp(12px, 1.8vw, 14px);
+  }
+
+  .polaroid-tag {
+    font-size: clamp(8px, 1.3vw, 10px);
+    padding: 3px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .works-section {
+    min-height: 700px;
+    margin-top: clamp(-100px, -15vh, -60px);
+  }
+
+  .category-buttons {
+    gap: clamp(14px, 2vh, 18px);
+  }
+
+  .category-circle-button {
+    width: clamp(75px, 18vw, 100px);
+    height: clamp(75px, 18vw, 100px);
+    box-shadow: 0 0 0 2px white, 0 3px 10px rgba(0, 0, 0, 0.12);
+  }
+
+  .category-circle-button:hover {
+    box-shadow: 0 0 0 2px white, 0 5px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .category-circle-button.active {
+    box-shadow: 0 0 0 3px white, 0 5px 18px rgba(0, 0, 0, 0.25);
+  }
+
+  .curved-label {
+    font-size: clamp(10px, 2.4vw, 12px);
+    letter-spacing: 0.06em;
+  }
+
+  .works-header {
+    top: clamp(140px, 22vh, 220px);
+  }
+
+  .category-buttons {
+    top: clamp(250px, 38vh, 320px);
+  }
+
+  .works-content-area {
+    margin-left: 0;
+    padding: clamp(110px, 18vh, 180px) clamp(20px, 4vw, 32px) clamp(40px, 6vh, 60px);
+  }
+
+  .category-summary-box {
+    margin-bottom: clamp(24px, 3.5vh, 32px);
+    padding: clamp(18px, 2.5vh, 24px) clamp(20px, 3vw, 28px);
+  }
+
+  .category-summary-title {
+    font-size: clamp(20px, 3vw, 28px);
+  }
+
+  .category-summary-text {
+    font-size: clamp(13px, 1.6vw, 16px);
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(24px, 3.5vh, 32px);
+  }
+
+  .polaroid-image-container {
+    aspect-ratio: 4 / 5;
+  }
+
+  .polaroid-frame {
+    padding: clamp(12px, 1.8vw, 16px);
+    padding-bottom: clamp(36px, 5.5vh, 48px);
+  }
+
+  .project-title {
+    font-size: clamp(12px, 2vw, 14px);
+  }
+
+  .polaroid-tags {
+    gap: 5px;
+  }
+
+  .polaroid-tag {
+    font-size: clamp(8px, 1.4vw, 10px);
+    padding: 3px 8px;
+  }
+}
+
+/* ===== PROJECT DETAIL PAGE ===== */
+.project-detail-page {
+  min-height: 100vh;
+  background: #Fffefd;
+  padding-bottom: 0;
+}
+
+/* Top Navigation */
+.project-detail-nav {
+  padding: clamp(24px, 4vh, 40px) clamp(40px, 6vw, 80px);
+}
+
+.back-to-projects-button {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(14px, 1.6vw, 16px);
+  color: #7D5A3D;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+}
+
+.back-to-projects-button:hover {
+  color: #834a3b;
+}
+
+/* Hero Banner */
+.project-banner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(40px, 6vw, 80px);
+  margin-bottom: clamp(32px, 5vh, 48px);
+}
+
+.project-banner-image {
+  width: min(80%, 800px);
+  height: 400px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Project Content */
+.project-detail-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 clamp(40px, 6vw, 80px);
+  padding-bottom: clamp(60px, 10vh, 100px);
+}
+
+/* Title Row */
+.project-title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: clamp(12px, 2vh, 16px);
+}
+
+.project-detail-title {
+  font-family: "SA Long Beach", cursive, sans-serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 600;
+  color: #834a3b;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.project-external-link {
+  font-size: clamp(24px, 4vw, 32px);
+  color: #7D5A3D;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.project-external-link:hover {
+  color: #834a3b;
+  transform: translateY(-2px);
+}
+
+/* Metadata */
+.project-metadata {
+  margin-bottom: clamp(16px, 2.5vh, 20px);
+}
+
+.project-year {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(14px, 1.6vw, 16px);
+  color: #B89080;
+  font-weight: 400;
+}
+
+/* Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: clamp(16px, 2.5vh, 20px);
+}
+
+.project-tag {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(12px, 1.4vw, 14px);
+  color: #7D5A3D;
+  background: transparent;
+  border: 1px solid #d5b0a6;
+  border-radius: 10px;
+  padding: 6px 14px;
+  font-weight: 400;
+}
+
+/* Subtitle */
+.project-subtitle {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(16px, 2vw, 20px);
+  color: #B89080;
+  font-weight: 400;
+  margin: 0 0 clamp(32px, 5vh, 48px) 0;
+  line-height: 1.5;
+}
+
+/* Content Sections */
+.project-section {
+  margin-bottom: clamp(32px, 5vh, 48px);
+}
+
+.project-section-title {
+  font-family: "SA Long Beach", cursive, sans-serif;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 600;
+  color: #834a3b;
+  margin: 0 0 clamp(16px, 2.5vh, 20px) 0;
+  letter-spacing: 0.02em;
+}
+
+.project-section-text {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(15px, 1.8vw, 17px);
+  color: #7D5A3D;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Lists */
+.project-bullet-list,
+.project-numbered-list {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(15px, 1.8vw, 17px);
+  color: #7D5A3D;
+  line-height: 1.7;
+  margin: 0;
+  padding-left: 24px;
+}
+
+.project-bullet-list li,
+.project-numbered-list li {
+  margin-bottom: 12px;
+}
+
+.project-bullet-list li:last-child,
+.project-numbered-list li:last-child {
+  margin-bottom: 0;
+}
+
+.project-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-links-list li {
+  margin-bottom: 8px;
+}
+
+.project-link {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(15px, 1.8vw, 17px);
+  color: #834a3b;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.project-link:hover {
+  color: #7D5A3D;
+}
+
+/* Footer */
+.project-detail-footer {
+  background: #FFE8E0;
+  padding: clamp(24px, 4vh, 32px) clamp(40px, 6vw, 80px);
+  margin-top: clamp(60px, 10vh, 100px);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copyright {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(13px, 1.5vw, 14px);
+  color: #7D5A3D;
+  margin: 0;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-icon-link {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(16px, 2vw, 18px);
+  color: #7D5A3D;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-icon-link:hover {
+  color: #834a3b;
+  transform: translateY(-2px);
+}
+
+/* Error State */
+.project-detail-error {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: clamp(40px, 8vh, 80px);
+}
+
+.project-detail-error p {
+  font-family: "SA Long Beach", cursive, sans-serif;
+  font-size: clamp(20px, 3vw, 28px);
+  color: #834a3b;
+}
+
+.project-detail-error button {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(14px, 1.6vw, 16px);
+  color: #7D5A3D;
+  background: none;
+  border: 1px solid #d5b0a6;
+  border-radius: 4px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.project-detail-error button:hover {
+  background: #FFE8E0;
+  color: #834a3b;
+}
+
+/* Responsive Adjustments for Project Detail */
+@media (max-width: 768px) {
+  .project-detail-nav {
+    padding: clamp(20px, 3vh, 32px) clamp(30px, 5vw, 60px);
+  }
+
+  .project-banner {
+    padding: 0 clamp(30px, 5vw, 60px);
+    margin-bottom: clamp(28px, 4vh, 40px);
+  }
+
+  .project-detail-content {
+    padding: 0 clamp(30px, 5vw, 60px);
+    padding-bottom: clamp(50px, 8vh, 80px);
+  }
+
+  .project-title-row {
+    gap: 12px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-tags {
+    gap: 6px;
+  }
+
+  .project-tag {
+    padding: 5px 12px;
+  }
+
+  .footer-social-links {
+    gap: 20px;
+  }
+}
