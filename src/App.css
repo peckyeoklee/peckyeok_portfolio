@@ -1,4 +1,5 @@
 /* ===== Hero Page Layout ===== */
+/* All values calculated relative to 1554px reference width */
 .hero-page {
   min-height: 100vh;
   display: flex;
@@ -14,13 +15,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: clamp(40px, 6vh, 60px); 
-  gap: clamp(16px, 2.5vh, 24px);
+  /* 50px padding at 1554px */
+  padding-top: calc(50 / 1554 * 100vw);
+  /* 20px gap at 1554px */
+  gap: calc(20 / 1554 * 100vw);
 }
 
 .site-name {
   font-family: "SA Long Beach", cursive, sans-serif;
-  font-size: clamp(36px, 5vw, 56px);
+  /* 48px at 1554px */
+  font-size: calc(48 / 1554 * 100vw);
   font-weight: 600;
   color: #834a3b; /* warm brown */
   text-transform: uppercase;
@@ -31,13 +35,15 @@
 /* Navigation Links */
 .nav {
   display: flex;
-  gap: clamp(50px, 6vw, 200px);
+  /* 100px gap at 1554px */
+  gap: calc(100 / 1554 * 100vw);
   align-items: center;
 }
 
 .nav-link {
   font-family: "SA Long Beach", cursive, sans-serif;
-  font-size: clamp(18px, 2.5vw, 24px);
+  /* 22px at 1554px */
+  font-size: calc(22 / 1554 * 100vw);
   font-weight: 400;
   color: #d5b0a6; /* lighter warm brown */
   text-transform: uppercase;
@@ -57,7 +63,8 @@
   align-items: center;
   justify-content: center;
   flex: 0.3;
-  padding: clamp(20px, 8vh, 10px) clamp(24px, 1vw, 48px);
+  /* 40px padding at 1554px */
+  padding: calc(40 / 1554 * 100vw) calc(24 / 1554 * 100vw);
   text-align: center;
   max-width: 100%;
   margin: 0 auto;
@@ -65,7 +72,8 @@
 
 .hero-text p {
   font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: clamp(10px, 4vw, 30px);
+  /* 26px at 1554px */
+  font-size: calc(26 / 1554 * 100vw);
   font-weight: 200;
   line-height: 1.5;
   color: #B89080; /* muted warm brown / dusty rose */
@@ -83,15 +91,18 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  gap: clamp(24px, 5vw, 60px);
-  padding: 0 clamp(20px, 4vw, 40px);
+  /* 50px gap at 1554px */
+  gap: calc(50 / 1554 * 100vw);
+  /* 30px padding at 1554px */
+  padding: 0 calc(30 / 1554 * 100vw);
   overflow: hidden;
   pointer-events: none;
   z-index: 2;
 }
 
 .bear-image {
-  width: clamp(300px, 28vw, 600px);
+  /* 380px at 1554px */
+  width: calc(380 / 1554 * 100vw);
   height: auto;
   object-fit: contain;
   object-position: bottom;
@@ -110,12 +121,15 @@
 }
 
 /* ===== WORKS Section Background Transition ===== */
+/* All values calculated relative to 1554px reference width */
 .works-background-container {
   position: relative;
   width: 100%;
   overflow: visible;
-  margin-top: -350px;
-  min-height: 300px;
+  /* -350px at 1554px = -22.52vw */
+  margin-top: calc(-350 / 1554 * 100vw);
+  /* 300px at 1554px = 19.3vw */
+  min-height: calc(300 / 1554 * 100vw);
 }
 
 .background-layer {
@@ -130,118 +144,72 @@
 }
 
 .light-pink-layer {
-  top: -150px;
+  /* -150px at 1554px = -9.65vw */
+  top: calc(-150 / 1554 * 100vw);
   z-index: 3;
 }
 
 .dark-pink-layer {
-  top: -120px;
+  /* -120px at 1554px = -7.72vw */
+  top: calc(-120 / 1554 * 100vw);
   z-index: 4;
 }
 
 /* ===== Responsive Adjustments for Hero ===== */
-@media (max-width: 768px) {
+/* Tablet layout (768px - 1023px) */
+@media (max-width: 1023px) {
   .header {
-    padding-top: clamp(32px, 5vh, 48px);
+    padding-top: calc(40 / 1554 * 100vw);
   }
 
   .nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: clamp(16px, 3vw, 20px);
-  }
-
-  .hero-text {
-    padding: clamp(48px, 8vh, 80px) clamp(20px, 4vw, 32px);
-  }
-
-  .hero-text p {
-    max-width: 24ch;
-  }
-
-  .decorative-images {
-    gap: clamp(16px, 4vw, 40px);
-    height: clamp(140px, 20vh, 200px);
+    gap: calc(60 / 1554 * 100vw);
   }
 
   .bear-image {
-    width: clamp(140px, 28vw, 220px);
-  }
-
-  .light-pink-layer {
-    top: -100px;
-  }
-
-  .dark-pink-layer {
-    top: -70px;
-  }
-}
-
-@media (max-width: 480px) {
-  .site-name {
-    font-size: clamp(28px, 8vw, 36px);
-  }
-
-  .nav-link {
-    font-size: clamp(16px, 4vw, 18px);
-  }
-
-  .hero-text p {
-    font-size: clamp(22px, 6vw, 28px);
-    max-width: 26ch;
-  }
-
-  .decorative-images {
-    height: clamp(120px, 18vh, 160px);
-    gap: clamp(12px, 3vw, 24px);
-  }
-
-  .bear-image {
-    width: clamp(120px, 32vw, 160px);
-  }
-
-  .works-background-container {
-    min-height: 200px;
-  }
-
-  .light-pink-layer {
-    top: -60px;
-  }
-
-  .dark-pink-layer {
-    top: -40px;
+    width: calc(280 / 1554 * 100vw);
   }
 }
 
 /* ===== WORKS Section ===== */
+/* All values calculated relative to 1554px reference width */
+/* Extra padding ensures content stays well within pink backgrounds */
 .works-section {
   position: relative;
-  min-height: 600px;
-  margin-top: clamp(-150px, -20vh, -100px);
-  padding: clamp(30px, 10vh, 100px) clamp(40px, 6vw, 80px);
+  /* min-height scales with width to maintain aspect ratio */
+  min-height: calc(700 / 1554 * 100vw);
+  /* -100px at 1554px */
+  margin-top: calc(-100 / 1554 * 100vw);
+  /* padding: 60px left/right, 80px bottom to keep content inside pink bg */
+  padding: calc(60 / 1554 * 100vw) calc(60 / 1554 * 100vw) calc(100 / 1554 * 100vw);
   background: transparent;
 }
 
 .works-header {
   position: absolute;
-  top: clamp(200px, 28vh, 320px); 
-  left: clamp(30px, 6vw, 80px);
+  /* 220px from top at 1554px */
+  top: calc(220 / 1554 * 100vw);
+  /* 60px from left at 1554px - ensures it's within the pink background */
+  left: calc(60 / 1554 * 100vw);
   z-index: 5;
 }
 
 .works-title {
   font-family: "SA Long Beach", cursive, sans-serif;
-  font-size: clamp(32px, 5vw, 48px);
+  /* 38px at 1554px */
+  font-size: calc(38 / 1554 * 100vw);
   font-weight: 600;
   color: #834a3b;
   text-transform: uppercase;
-  margin: 0 0 clamp(8px, 1.5vh, 12px) 0;
+  /* 8px margin at 1554px */
+  margin: 0 0 calc(8 / 1554 * 100vw) 0;
   letter-spacing: 0.02em;
 }
 
 .works-subtitle {
   font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: clamp(13px, 1.8vw, 16px);
+  /* 14px at 1554px */
+  font-size: calc(14 / 1554 * 100vw);
   font-weight: 400;
   color: #7D5A3D;
   margin: 0;
@@ -251,18 +219,22 @@
 /* Category Circle Buttons */
 .category-buttons {
   position: absolute;
-  left: clamp(40px, 6vw, 80px);
-  top: clamp(340px, 45vh, 460px);
+  /* 60px from left at 1554px - ensures buttons are within pink background */
+  left: calc(60 / 1554 * 100vw);
+  /* 320px from top at 1554px */
+  top: calc(320 / 1554 * 100vw);
   display: flex;
   flex-direction: column;
-  gap: clamp(50px, 4vh, 45px);
+  /* 30px gap at 1554px */
+  gap: calc(30 / 1554 * 100vw);
   z-index: 5;
 }
 
 .category-circle-button {
   position: relative;
-  width: clamp(150px, 16vw, 200px);
-  height: clamp(150px, 16vw, 200px);
+  /* 130px diameter at 1554px (8.37vw) */
+  width: calc(130 / 1554 * 100vw);
+  height: calc(130 / 1554 * 100vw);
   border-radius: 9999px;
   border: none;
   overflow: hidden;
@@ -321,7 +293,8 @@
 
 .curved-label {
   font-family: "SA Long Beach", cursive, sans-serif;
-  font-size: clamp(13px, 1.7vw, 16px);
+  /* 14px at 1554px */
+  font-size: calc(14 / 1554 * 100vw);
   font-weight: 600;
   fill: white;
   text-transform: uppercase;
@@ -337,38 +310,45 @@
 /* ===== Works Content Area (Right Side) ===== */
 .works-content-area {
   position: relative;
-  margin-left: clamp(240px, 28vw, 340px);
-  padding: clamp(150px, 22vh, 260px) clamp(30px, 4vw, 60px) clamp(60px, 8vh, 80px);
+  /* 230px margin from left at 1554px to clear category buttons */
+  margin-left: calc(230 / 1554 * 100vw);
+  /* padding: 180px top, 50px left, 60px right (extra for containment), 80px bottom */
+  padding: calc(180 / 1554 * 100vw) calc(60 / 1554 * 100vw) calc(80 / 1554 * 100vw) calc(30 / 1554 * 100vw);
   z-index: 4;
 }
 
 /* Category Summary Box */
 .category-summary-box {
   background: white;
-  padding: clamp(20px, 3vh, 28px) clamp(24px, 3.5vw, 36px);
+  /* padding: 24px 32px at 1554px */
+  padding: calc(24 / 1554 * 100vw) calc(32 / 1554 * 100vw);
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: clamp(32px, 5vh, 48px);
+  /* 36px margin at 1554px */
+  margin-bottom: calc(36 / 1554 * 100vw);
   width: 100%;
-  max-width: clamp(1000px, 70vw, 1200px);
+  max-width: 100%;
   text-align: center;
 }
 
 .category-summary-title {
   font-family: "SA Long Beach", cursive, sans-serif;
-  font-size: clamp(24px, 3.5vw, 36px);
+  /* 28px at 1554px */
+  font-size: calc(28 / 1554 * 100vw);
   font-weight: 600;
   color: #834a3b;
   text-transform: uppercase;
   margin: 0;
   letter-spacing: 0.02em;
   border-bottom: 2px dotted #d5b0a6;
-  margin-bottom: clamp(12px, 2vh, 16px);
+  /* 12px margin at 1554px */
+  margin-bottom: calc(12 / 1554 * 100vw);
 }
 
 .category-summary-text {
   font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: clamp(14px, 1.8vw, 18px);
+  /* 16px at 1554px */
+  font-size: calc(16 / 1554 * 100vw);
   font-weight: 400;
   color: #7D5A3D;
   margin: 0;
@@ -378,8 +358,10 @@
 /* Projects Grid */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(28px, 4.5vh, 48px) clamp(24px, 3.5vw, 40px);
+  /* 2 columns for desktop, with min 240px per card */
+  grid-template-columns: repeat(2, 1fr);
+  /* gap: 36px 32px at 1554px */
+  gap: calc(36 / 1554 * 100vw) calc(32 / 1554 * 100vw);
   align-items: start;
 }
 
@@ -404,8 +386,10 @@
 /* Polaroid Frame */
 .polaroid-frame {
   background: white;
-  padding: clamp(14px, 2vw, 18px);
-  padding-bottom: clamp(30px, 6.0vh, 10px);
+  /* 16px padding at 1554px */
+  padding: calc(16 / 1554 * 100vw);
+  /* 40px padding-bottom at 1554px for title/tags */
+  padding-bottom: calc(40 / 1554 * 100vw);
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
@@ -422,7 +406,8 @@
   background: #f5f5f5;
   overflow: hidden;
   border-radius: 1px;
-  margin-bottom: clamp(10px, 1.5vh, 15px);
+  /* 12px margin at 1554px */
+  margin-bottom: calc(12 / 1554 * 100vw);
 }
 
 .project-image {
@@ -436,13 +421,15 @@
 /* Project Title */
 .project-title {
   font-family: "SA Long Beach", cursive, sans-serif;
-  font-size: clamp(13px, 1.6vw, 16px);
+  /* 14px at 1554px */
+  font-size: calc(14 / 1554 * 100vw);
   font-weight: 500;
   color: #7D5A3D;
   text-transform: uppercase;
   text-align: center;
   margin: 0;
-  margin-bottom: clamp(10px, 1.5vh, 14px);
+  /* 10px margin at 1554px */
+  margin-bottom: calc(10 / 1554 * 100vw);
   line-height: 1.3;
   letter-spacing: 0.02em;
 }
@@ -451,164 +438,133 @@
 .polaroid-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  /* 6px gap at 1554px */
+  gap: calc(6 / 1554 * 100vw);
   justify-content: center;
   align-items: center;
 }
 
 .polaroid-tag {
   font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: clamp(9px, 1.2vw, 11px);
+  /* 10px at 1554px */
+  font-size: calc(10 / 1554 * 100vw);
   color: #B89080;
   background: transparent;
   border: 1px solid #E8D5CF;
   border-radius: 10px;
-  padding: 4px 10px;
+  /* padding: 4px 10px at 1554px */
+  padding: calc(4 / 1554 * 100vw) calc(10 / 1554 * 100vw);
   font-weight: 400;
   text-transform: lowercase;
   white-space: nowrap;
 }
 
-/* Responsive adjustments for WORKS section */
-@media (max-width: 768px) {
+/* ===== Tablet Layout (768px - 1023px) - Stacked Layout ===== */
+@media (max-width: 1023px) {
   .works-section {
-    min-height: 500px;
-    margin-top: clamp(-120px, -18vh, -80px);
-    padding: clamp(50px, 8vh, 80px) clamp(30px, 5vw, 60px);
+    min-height: auto;
+    /* Extra padding all around to keep content within pink backgrounds */
+    padding: calc(50 / 768 * 100vw) calc(50 / 768 * 100vw) calc(80 / 768 * 100vw);
   }
 
   .works-header {
-    top: clamp(160px, 24vh, 260px);
-    left: clamp(30px, 5vw, 60px);
+    position: relative;
+    top: auto;
+    left: auto;
+    text-align: center;
+    margin-bottom: calc(24 / 768 * 100vw);
   }
 
+  .works-title {
+    font-size: calc(32 / 768 * 100vw);
+  }
+
+  .works-subtitle {
+    font-size: calc(13 / 768 * 100vw);
+  }
+
+  /* Category buttons in horizontal row */
   .category-buttons {
-    left: clamp(30px, 5vw, 60px);
-    top: clamp(280px, 40vh, 360px);
-    gap: clamp(20px, 3vh, 26px);
+    position: relative;
+    top: auto;
+    left: auto;
+    flex-direction: row;
+    justify-content: center;
+    gap: calc(20 / 768 * 100vw);
+    margin-bottom: calc(30 / 768 * 100vw);
   }
 
   .category-circle-button {
-    width: clamp(100px, 18vw, 140px);
-    height: clamp(100px, 18vw, 140px);
+    /* 100px diameter at 768px */
+    width: calc(100 / 768 * 100vw);
+    height: calc(100 / 768 * 100vw);
   }
 
   .curved-label {
-    font-size: clamp(12px, 2.2vw, 14px);
+    font-size: calc(11 / 768 * 100vw);
   }
 
-  .works-content-area {
-    margin-left: clamp(180px, 24vw, 260px);
-    padding: clamp(120px, 19vh, 210px) clamp(24px, 3.5vw, 48px) clamp(50px, 8vh, 80px);
-  }
-
-  .category-summary-box {
-    margin-bottom: clamp(28px, 4vh, 38px);
-  }
-
-  .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: clamp(24px, 4vh, 36px) clamp(20px, 3vw, 32px);
-  }
-
-  .polaroid-image-container {
-    aspect-ratio: 4 / 5;
-  }
-
-  .polaroid-frame {
-    padding-bottom: clamp(38px, 5.5vh, 52px);
-  }
-
-  .project-title {
-    font-size: clamp(12px, 1.8vw, 14px);
-  }
-
-  .polaroid-tag {
-    font-size: clamp(8px, 1.3vw, 10px);
-    padding: 3px 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .works-section {
-    min-height: 700px;
-    margin-top: clamp(-100px, -15vh, -60px);
-  }
-
-  .category-buttons {
-    gap: clamp(14px, 2vh, 18px);
-  }
-
-  .category-circle-button {
-    width: clamp(75px, 18vw, 100px);
-    height: clamp(75px, 18vw, 100px);
-    box-shadow: 0 0 0 2px white, 0 3px 10px rgba(0, 0, 0, 0.12);
-  }
-
-  .category-circle-button:hover {
-    box-shadow: 0 0 0 2px white, 0 5px 16px rgba(0, 0, 0, 0.2);
-  }
-
-  .category-circle-button.active {
-    box-shadow: 0 0 0 3px white, 0 5px 18px rgba(0, 0, 0, 0.25);
-  }
-
-  .curved-label {
-    font-size: clamp(10px, 2.4vw, 12px);
-    letter-spacing: 0.06em;
-  }
-
-  .works-header {
-    top: clamp(140px, 22vh, 220px);
-  }
-
-  .category-buttons {
-    top: clamp(250px, 38vh, 320px);
-  }
-
+  /* Full width content area with horizontal padding for containment */
   .works-content-area {
     margin-left: 0;
-    padding: clamp(110px, 18vh, 180px) clamp(20px, 4vw, 32px) clamp(40px, 6vh, 60px);
+    padding: calc(20 / 768 * 100vw) 0 calc(60 / 768 * 100vw);
   }
 
   .category-summary-box {
-    margin-bottom: clamp(24px, 3.5vh, 32px);
-    padding: clamp(18px, 2.5vh, 24px) clamp(20px, 3vw, 28px);
+    padding: calc(20 / 768 * 100vw) calc(24 / 768 * 100vw);
+    margin-bottom: calc(28 / 768 * 100vw);
   }
 
   .category-summary-title {
-    font-size: clamp(20px, 3vw, 28px);
+    font-size: calc(24 / 768 * 100vw);
+    margin-bottom: calc(10 / 768 * 100vw);
   }
 
   .category-summary-text {
-    font-size: clamp(13px, 1.6vw, 16px);
+    font-size: calc(14 / 768 * 100vw);
   }
 
+  /* 2-column grid for polaroids */
   .projects-grid {
-    grid-template-columns: 1fr;
-    gap: clamp(24px, 3.5vh, 32px);
-  }
-
-  .polaroid-image-container {
-    aspect-ratio: 4 / 5;
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(24 / 768 * 100vw) calc(20 / 768 * 100vw);
   }
 
   .polaroid-frame {
-    padding: clamp(12px, 1.8vw, 16px);
-    padding-bottom: clamp(36px, 5.5vh, 48px);
+    padding: calc(12 / 768 * 100vw);
+    padding-bottom: calc(32 / 768 * 100vw);
+  }
+
+  .polaroid-image-container {
+    margin-bottom: calc(10 / 768 * 100vw);
   }
 
   .project-title {
-    font-size: clamp(12px, 2vw, 14px);
+    font-size: calc(12 / 768 * 100vw);
+    margin-bottom: calc(8 / 768 * 100vw);
   }
 
   .polaroid-tags {
-    gap: 5px;
+    gap: calc(5 / 768 * 100vw);
   }
 
   .polaroid-tag {
-    font-size: clamp(8px, 1.4vw, 10px);
-    padding: 3px 8px;
+    font-size: calc(9 / 768 * 100vw);
+    padding: calc(3 / 768 * 100vw) calc(8 / 768 * 100vw);
+  }
+
+  /* Adjust background positioning for tablet */
+  .works-background-container {
+    margin-top: calc(-280 / 768 * 100vw);
+    min-height: calc(250 / 768 * 100vw);
+  }
+
+  .light-pink-layer {
+    top: calc(-120 / 768 * 100vw);
+  }
+
+  .dark-pink-layer {
+    top: calc(-100 / 768 * 100vw);
   }
 }
 
@@ -879,42 +835,37 @@
 }
 
 /* Responsive Adjustments for Project Detail */
-@media (max-width: 768px) {
+/* Tablet layout (768px - 1023px) */
+@media (max-width: 1023px) {
   .project-detail-nav {
-    padding: clamp(20px, 3vh, 32px) clamp(30px, 5vw, 60px);
+    padding: calc(24 / 768 * 100vw) calc(40 / 768 * 100vw);
   }
 
   .project-banner {
-    padding: 0 clamp(30px, 5vw, 60px);
-    margin-bottom: clamp(28px, 4vh, 40px);
+    padding: 0 calc(40 / 768 * 100vw);
+    margin-bottom: calc(32 / 768 * 100vw);
   }
 
   .project-detail-content {
-    padding: 0 clamp(30px, 5vw, 60px);
-    padding-bottom: clamp(50px, 8vh, 80px);
+    padding: 0 calc(40 / 768 * 100vw);
+    padding-bottom: calc(60 / 768 * 100vw);
   }
 
   .project-title-row {
-    gap: 12px;
+    gap: calc(12 / 768 * 100vw);
   }
 
   .footer-content {
     flex-direction: column;
-    gap: 16px;
+    gap: calc(16 / 768 * 100vw);
     text-align: center;
   }
-}
 
-@media (max-width: 480px) {
   .project-tags {
-    gap: 6px;
+    gap: calc(6 / 768 * 100vw);
   }
 
   .project-tag {
-    padding: 5px 12px;
-  }
-
-  .footer-social-links {
-    gap: 20px;
+    padding: calc(5 / 768 * 100vw) calc(12 / 768 * 100vw);
   }
 }

@@ -1,3 +1,55 @@
+/* ===== Reference Width Scaling System ===== */
+/* 1554px is the reference width where the design looks perfect */
+:root {
+  /* Reference width for calculations */
+  --ref-width: 1554;
+  
+  /* Scaling factor: 100vw / 1554 = 0.0644vw per pixel at reference */
+  /* Usage: calc(VALUE * var(--vw-scale)) where VALUE is the pixel size at 1554px */
+  --vw-scale: 0.0644vw;
+  
+  /* Common scaled values at 1554px reference */
+  --spacing-xs: calc(8 * var(--vw-scale));   /* ~8px at 1554 */
+  --spacing-sm: calc(16 * var(--vw-scale));  /* ~16px at 1554 */
+  --spacing-md: calc(24 * var(--vw-scale));  /* ~24px at 1554 */
+  --spacing-lg: calc(40 * var(--vw-scale));  /* ~40px at 1554 */
+  --spacing-xl: calc(60 * var(--vw-scale));  /* ~60px at 1554 */
+  --spacing-2xl: calc(80 * var(--vw-scale)); /* ~80px at 1554 */
+  
+  /* Category button sizes */
+  --button-size: calc(130 * var(--vw-scale)); /* ~130px diameter at 1554 */
+  --button-gap: calc(35 * var(--vw-scale));   /* ~35px gap at 1554 */
+  
+  /* Works section layout */
+  --works-sidebar-width: calc(220 * var(--vw-scale)); /* sidebar area width */
+  --works-content-margin: calc(260 * var(--vw-scale)); /* left margin for content */
+  --works-header-top: calc(220 * var(--vw-scale));
+  --works-buttons-top: calc(320 * var(--vw-scale));
+  --works-padding-x: calc(50 * var(--vw-scale));
+  
+  /* Background positioning */
+  --bg-margin-top: calc(-350 * var(--vw-scale));
+  --light-pink-top: calc(-150 * var(--vw-scale));
+  --dark-pink-top: calc(-120 * var(--vw-scale));
+  
+  /* Polaroid card sizing */
+  --polaroid-min-width: calc(240 * var(--vw-scale));
+  --polaroid-max-width: calc(320 * var(--vw-scale));
+  --polaroid-gap: calc(32 * var(--vw-scale));
+  
+  /* Content area positioning */
+  --content-padding-top: calc(180 * var(--vw-scale));
+  --content-padding-bottom: calc(80 * var(--vw-scale));
+  
+  /* Font sizes */
+  --font-title-lg: calc(48 * var(--vw-scale));
+  --font-title-md: calc(36 * var(--vw-scale));
+  --font-title-sm: calc(24 * var(--vw-scale));
+  --font-body: calc(16 * var(--vw-scale));
+  --font-small: calc(14 * var(--vw-scale));
+  --font-xs: calc(11 * var(--vw-scale));
+}
+
 /* ===== Font Face ===== */
 @font-face {
   font-family: "SA Long Beach";
@@ -38,7 +90,7 @@ body {
   background-color:  #Fffefd;
   color: #7D5A3D;
   min-height: 100vh;
-  min-width: 320px;
+  min-width: 768px; /* Minimum supported viewport width */
   line-height: 1.5;
   overflow-x: hidden;
 }
