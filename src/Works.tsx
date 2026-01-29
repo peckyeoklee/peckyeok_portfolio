@@ -1,33 +1,35 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { getProjectsByCategory } from './projectsData';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { getProjectsByCategory } from "./projectsData";
 
 function Works() {
-  const [selectedCategory, setSelectedCategory] = useState<'data' | 'web-dev' | 'design'>('data');
+  const [selectedCategory, setSelectedCategory] = useState<
+    "data" | "web-dev" | "design"
+  >("data");
   const navigate = useNavigate();
 
   const categories = [
     {
-      id: 'data' as const,
-      label: 'DATA',
-      image: '/images/bear-2.png',
-      color: '#C67B6B', // warm red/brown
-      pathId: 'data-curve'
+      id: "data" as const,
+      label: "DATA",
+      image: "/images/bear-2.png",
+      color: "#C67B6B", // warm red/brown
+      pathId: "data-curve",
     },
     {
-      id: 'web-dev' as const,
-      label: 'WEB DEV',
-      image: '/images/bear-3.png',
-      color: '#A8C9A0', // green
-      pathId: 'webdev-curve'
+      id: "web-dev" as const,
+      label: "WEB DEV",
+      image: "/images/bear-3.png",
+      color: "#A8C9A0", // green
+      pathId: "webdev-curve",
     },
     {
-      id: 'design' as const,
-      label: 'DESIGN',
-      image: '/images/bear-1.png',
-      color: '#8FA8CE', // blue
-      pathId: 'design-curve'
-    }
+      id: "design" as const,
+      label: "DESIGN",
+      image: "/images/bear-1.png",
+      color: "#8FA8CE", // blue
+      pathId: "design-curve",
+    },
   ];
 
   // Get projects for the selected category
@@ -49,21 +51,17 @@ function Works() {
         {categories.map((category) => (
           <button
             key={category.id}
-            className={`category-circle-button ${selectedCategory === category.id ? 'active' : ''}`}
+            className={`category-circle-button ${selectedCategory === category.id ? "active" : ""}`}
             style={{ backgroundColor: category.color }}
             aria-label={`View ${category.label} projects`}
             onClick={() => setSelectedCategory(category.id)}
           >
             {/* White outline border */}
             <div className="circle-outline"></div>
-            
+
             {/* Bear image clipped to circle */}
             <div className="bear-container">
-              <img 
-                src={category.image} 
-                alt="" 
-                className="bear-badge-image"
-              />
+              <img src={category.image} alt="" className="bear-badge-image" />
             </div>
 
             {/* Curved text using SVG */}
@@ -76,9 +74,9 @@ function Works() {
                 />
               </defs>
               <text className="curved-label">
-                <textPath 
-                  href={`#${category.pathId}`} 
-                  startOffset="50%" 
+                <textPath
+                  href={`#${category.pathId}`}
+                  startOffset="50%"
                   textAnchor="middle"
                 >
                   {category.label}
@@ -93,9 +91,13 @@ function Works() {
       <div className="works-content-area">
         {/* Category Summary Box */}
         <div className="category-summary-box">
-          <h3 className="category-summary-title">{selectedCategory.toUpperCase()}</h3>
+          <h3 className="category-summary-title">
+            {selectedCategory.toUpperCase()}
+          </h3>
           <p className="category-summary-text">
-            here is where all my {selectedCategory === 'web-dev' ? 'web dev' : selectedCategory} projects goes!
+            here is where all my{" "}
+            {selectedCategory === "web-dev" ? "web dev" : selectedCategory}{" "}
+            projects goes!
           </p>
         </div>
 
@@ -110,18 +112,20 @@ function Works() {
             >
               <div className="polaroid-frame">
                 <div className="polaroid-image-container">
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.image}
                     alt={project.title}
                     className="project-image"
                   />
                 </div>
                 <p className="project-title">{project.title}</p>
-                
+
                 {/* Project Tags */}
                 <div className="polaroid-tags">
                   {project.tags.slice(0, 3).map((tag, index) => (
-                    <span key={index} className="polaroid-tag">{tag}</span>
+                    <span key={index} className="polaroid-tag">
+                      {tag}
+                    </span>
                   ))}
                 </div>
               </div>
