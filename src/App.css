@@ -214,7 +214,7 @@
   color: #7D5A3D;
   margin: 0;
   /* Add space between subtitle and buttons - 20px at 1554px */
-  margin-bottom: !calc(100 / 1554 * 200vw);
+  margin-bottom: calc(20 / 1554 * 100vw);
   line-height: 1.4;
 }
 
@@ -870,5 +870,461 @@
 
   .project-tag {
     padding: calc(5 / 768 * 100vw) calc(12 / 768 * 100vw);
+  }
+}
+
+/* ===== ABOUT SECTION ===== */
+/* All values calculated relative to 1554px reference width */
+.about-section {
+  background-color: #Fffefd;
+  /* padding: 80px horizontal at 1554px */
+  padding: calc(80 / 1554 * 100vw) calc(80 / 1554 * 100vw);
+  position: relative;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: calc(1200 / 1554 * 100vw);
+  margin: 0 auto;
+  /* gap: 60px at 1554px */
+  gap: calc(60 / 1554 * 100vw);
+}
+
+.about-text {
+  flex: 1;
+  max-width: calc(500 / 1554 * 100vw);
+}
+
+.about-title {
+  font-family: "SA Long Beach", cursive, sans-serif;
+  /* 42px at 1554px */
+  font-size: calc(42 / 1554 * 100vw);
+  font-weight: 600;
+  color: #834a3b;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0;
+  /* 16px margin at 1554px */
+  margin-bottom: calc(16 / 1554 * 100vw);
+}
+
+.about-description {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* 16px at 1554px */
+  font-size: calc(16 / 1554 * 100vw);
+  font-weight: 400;
+  color: #7D5A3D;
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.about-illustration {
+  flex-shrink: 0;
+}
+
+.about-image {
+  /* 300px at 1554px */
+  width: calc(600 / 1554 * 100vw);
+  height: auto;
+  object-fit: contain;
+}
+
+/* About Section - Tablet */
+@media (max-width: 1023px) {
+  .about-section {
+    padding: calc(60 / 768 * 100vw) calc(50 / 768 * 100vw);
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+    gap: calc(40 / 768 * 100vw);
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-title {
+    font-size: calc(32 / 768 * 100vw);
+  }
+
+  .about-description {
+    font-size: calc(14 / 768 * 100vw);
+  }
+
+  .about-image {
+    width: calc(250 / 768 * 100vw);
+  }
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+  background: linear-gradient(180deg, #FFE8E0 0%, #FFDDD3 100%);
+  /* padding: 60px at 1554px */
+  padding: calc(60 / 1554 * 100vw) calc(80 / 1554 * 100vw);
+  text-align: center;
+}
+
+.contact-content {
+  max-width: calc(800 / 1554 * 100vw);
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-family: "SA Long Beach", cursive, sans-serif;
+  /* 36px at 1554px */
+  font-size: calc(36 / 1554 * 100vw);
+  font-weight: 600;
+  color: #834a3b;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0;
+  /* 12px margin at 1554px */
+  margin-bottom: calc(12 / 1554 * 100vw);
+}
+
+.contact-text {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* 16px at 1554px */
+  font-size: calc(16 / 1554 * 100vw);
+  font-weight: 400;
+  color: #7D5A3D;
+  margin: 0;
+  /* 24px margin at 1554px */
+  margin-bottom: calc(24 / 1554 * 100vw);
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  /* gap: 32px at 1554px */
+  gap: calc(32 / 1554 * 100vw);
+  /* 32px margin at 1554px */
+  margin-bottom: calc(32 / 1554 * 100vw);
+}
+
+.contact-link {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* 15px at 1554px */
+  font-size: calc(15 / 1554 * 100vw);
+  color: #7D5A3D;
+  text-decoration: none;
+  /* padding: 10px 20px at 1554px */
+  padding: calc(10 / 1554 * 100vw) calc(20 / 1554 * 100vw);
+  border: 1px solid #d5b0a6;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.contact-link:hover {
+  background: white;
+  color: #834a3b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-copyright {
+  font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* 13px at 1554px */
+  font-size: calc(13 / 1554 * 100vw);
+  color: #B89080;
+  margin: 0;
+}
+
+/* Contact Section - Tablet */
+@media (max-width: 1023px) {
+  .contact-section {
+    padding: calc(50 / 768 * 100vw) calc(40 / 768 * 100vw);
+  }
+
+  .contact-title {
+    font-size: calc(28 / 768 * 100vw);
+  }
+
+  .contact-text {
+    font-size: calc(14 / 768 * 100vw);
+  }
+
+  .contact-links {
+    flex-wrap: wrap;
+    gap: calc(16 / 768 * 100vw);
+  }
+
+  .contact-link {
+    font-size: calc(13 / 768 * 100vw);
+    padding: calc(10 / 768 * 100vw) calc(18 / 768 * 100vw);
+  }
+
+  .contact-copyright {
+    font-size: calc(12 / 768 * 100vw);
+  }
+}
+
+/* ===== MOBILE LAYOUT (375px - 767px) ===== */
+@media (max-width: 767px) {
+  /* --- Hero Section - Mobile --- */
+  /* Location: Mobile breakpoint in App.css, around line 1070 */
+  /* Changed from 80vh to 70vh to shift bears UP so they peek out */
+  /* FIXED: overflow: visible allows bears to peek beyond hero boundaries */
+  .hero-page {
+    min-height: 60vh; /* Shorter hero to shift bears up */
+    overflow: visible; /* Allow bears to extend beyond and peek out */
+  }
+
+  .header {
+    /* 30px padding at 375px */
+    padding-top: calc(30 / 375 * 100vw);
+    /* 12px gap at 375px */
+    gap: calc(12 / 375 * 100vw);
+  }
+
+  .site-name {
+    /* 32px at 375px */
+    font-size: calc(32 / 375 * 100vw);
+  }
+
+  .nav {
+    /* 40px gap at 375px */
+    gap: calc(40 / 375 * 100vw);
+  }
+
+  .nav-link {
+    font-size: clamp(16px, 4vw, 18px);
+  }
+
+  .hero-text p {
+    font-size: clamp(22px, 6vw, 28px);
+    max-width: 26ch;
+  }
+
+  .decorative-images {
+    height: clamp(200px, 30vh, 999px);
+    gap: 0; /* Reset gap, use negative margins instead */
+  }
+
+  /* Negative margin for overlapping bears */
+  .bear-image {
+    margin-left: calc(-20 / 375 * 100vw); /* Overlap by ~20px at 375px */
+  }
+
+  .bear-image:first-child {
+    margin-left: 0; /* No margin on first bear */
+  }
+
+  .bear-image {
+    /* 120px at 375px - smaller bears */
+    width: calc(150 / 375 * 100vw);
+  }
+
+  .bear-1 {
+    /* Shifted UP to peek out */
+    transform: translateY(-10%) rotate(25deg);
+  }
+
+  .bear-2 {
+    /* Shifted UP to peek out */
+    transform: translateY(0%) rotate(0deg);
+  }
+
+  .bear-3 {
+    /* Shifted UP to peek out */
+    transform: translateY(-10%) rotate(-15deg);
+  }
+
+  /* --- Background Images - Compressed HORIZONTALLY (elongated look) --- */
+  /* Location: Mobile breakpoint @media (max-width: 767px) in App.css, around line 1125 */
+  .works-background-container {
+    /* Shift up */
+    margin-top: calc(-260 / 375 * 100vw);
+    min-height: calc(250 / 375 * 100vw);
+  }
+
+  .background-layer {
+    /* Compress HORIZONTALLY + Stretch VERTICALLY to cover works section */
+    /* Shifted RIGHT slightly with translateX */
+    transform: scaleX(1.6) scaleY(2.6) translateX(2%);
+    transform-origin: center top;
+  }
+
+  .light-pink-layer {
+    top: calc(-60 / 375 * 100vw);
+  }
+
+  .dark-pink-layer {
+    top: calc(-45 / 375 * 100vw);
+  }
+
+  /* --- Works Section - Mobile --- */
+  .works-section {
+    min-height: auto;
+    /* Shift up, more padding for containment */
+    margin-top: calc(-40 / 375 * 100vw);
+    padding: calc(30 / 375 * 100vw) calc(24 / 375 * 100vw) calc(50 / 375 * 100vw);
+  }
+
+  .works-header {
+    position: relative;
+    top: auto;
+    left: auto;
+    text-align: center;
+    margin-bottom: calc(16 / 375 * 100vw);
+  }
+
+  .works-title {
+    font-size: calc(28 / 375 * 100vw);
+    margin-bottom: calc(6 / 375 * 100vw);
+  }
+
+  .works-subtitle {
+    font-size: calc(12 / 375 * 100vw);
+    margin-bottom: calc(12 / 375 * 100vw);
+  }
+
+  /* Category buttons - horizontal row, smaller */
+  .category-buttons {
+    position: relative;
+    top: auto;
+    left: auto;
+    flex-direction: row;
+    justify-content: center;
+    gap: calc(12 / 375 * 100vw);
+    margin-bottom: calc(20 / 375 * 100vw);
+  }
+
+  .category-circle-button {
+    /* 80px diameter at 375px */
+    width: calc(80 / 375 * 100vw);
+    height: calc(80 / 375 * 100vw);
+    box-shadow: 0 0 0 2px white, 0 3px 8px rgba(0, 0, 0, 0.12);
+  }
+
+  .curved-label {
+    font-size: calc(9 / 375 * 100vw);
+    letter-spacing: 0.05em;
+  }
+
+  /* Content area - full width */
+  .works-content-area {
+    margin-left: 0;
+    padding: calc(16 / 375 * 100vw) 0 calc(40 / 375 * 100vw);
+  }
+
+  .category-summary-box {
+    padding: calc(16 / 375 * 100vw) calc(20 / 375 * 100vw);
+    margin-bottom: calc(20 / 375 * 100vw);
+    border-radius: 8px;
+  }
+
+  .category-summary-title {
+    font-size: calc(20 / 375 * 100vw);
+    margin-bottom: calc(8 / 375 * 100vw);
+  }
+
+  .category-summary-text {
+    font-size: calc(12 / 375 * 100vw);
+  }
+
+  /* Polaroid grid - 2 columns */
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(16 / 375 * 100vw) calc(12 / 375 * 100vw);
+  }
+
+  .project-card-polaroid {
+    max-width: 100%; /* Fill grid cell on mobile */
+  }
+
+  .polaroid-frame {
+    padding: calc(8 / 375 * 100vw);
+    padding-bottom: calc(24 / 375 * 100vw);
+    border-radius: 6px;
+  }
+
+  .polaroid-image-container {
+    margin-bottom: calc(8 / 375 * 100vw);
+    border-radius: 2px;
+  }
+
+  .project-title {
+    font-size: calc(10 / 375 * 100vw);
+    margin-bottom: calc(6 / 375 * 100vw);
+  }
+
+  .polaroid-tags {
+    gap: calc(4 / 375 * 100vw);
+  }
+
+  .polaroid-tag {
+    font-size: calc(7 / 375 * 100vw);
+    padding: calc(2 / 375 * 100vw) calc(6 / 375 * 100vw);
+    border-radius: 6px;
+  }
+
+  /* --- About Section - Mobile --- */
+  .about-section {
+    padding: calc(40 / 375 * 100vw) calc(24 / 375 * 100vw);
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+    gap: calc(24 / 375 * 100vw);
+  }
+
+  .about-text {
+    max-width: 100%;
+  }
+
+  .about-title {
+    font-size: calc(28 / 375 * 100vw);
+    margin-bottom: calc(12 / 375 * 100vw);
+  }
+
+  .about-description {
+    font-size: calc(13 / 375 * 100vw);
+  }
+
+  .about-illustration {
+    margin-left: 0;
+  }
+
+  .about-image {
+    width: calc(200 / 375 * 100vw);
+  }
+
+  /* --- Contact Section - Mobile --- */
+  .contact-section {
+    padding: calc(40 / 375 * 100vw) calc(24 / 375 * 100vw);
+  }
+
+  .contact-title {
+    font-size: calc(24 / 375 * 100vw);
+    margin-bottom: calc(10 / 375 * 100vw);
+  }
+
+  .contact-text {
+    font-size: calc(12 / 375 * 100vw);
+    margin-bottom: calc(20 / 375 * 100vw);
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+    gap: calc(12 / 375 * 100vw);
+    margin-bottom: calc(24 / 375 * 100vw);
+  }
+
+  .contact-link {
+    font-size: calc(12 / 375 * 100vw);
+    padding: calc(10 / 375 * 100vw) calc(20 / 375 * 100vw);
+  }
+
+  .contact-copyright {
+    font-size: calc(10 / 375 * 100vw);
   }
 }

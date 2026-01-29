@@ -90,7 +90,7 @@ body {
   background-color:  #Fffefd;
   color: #7D5A3D;
   min-height: 100vh;
-  min-width: 768px; /* Minimum supported viewport width */
+  min-width: 375px; /* Minimum supported viewport width - mobile */
   line-height: 1.5;
   overflow-x: hidden;
 }

@@ -1,0 +1,25 @@
+function Contact() {
+  return (
+    <footer id="contact" className="contact-section">
+      <div className="contact-content">
+        <h2 className="contact-title">CONTACT ME</h2>
+        <p className="contact-text">let's connect and create something amazing together!</p>
+        <div className="contact-links">
+          <a href="mailto:your@email.com" className="contact-link">
+            ✉️ Email
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="contact-link">
+            💼 LinkedIn
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="contact-link">
+            🐙 GitHub
+          </a>
+        </div>
+        <p className="contact-copyright">© 2026 Peck Yeok. All rights reserved.</p>
+      </div>
+    </footer>
+  );
+}
+
+export default Contact;
+
