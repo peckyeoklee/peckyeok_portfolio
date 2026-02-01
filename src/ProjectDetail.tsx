@@ -82,6 +82,45 @@ function ProjectDetail() {
           <p className="project-section-text">{project.overview}</p>
         </section>
 
+        {/* Video Embed Section */}
+        {project.videoUrl && (
+          <section className="project-section">
+            <h2 className="project-section-title">Project Video{Array.isArray(project.videoUrl) && project.videoUrl.length > 1 ? 's' : ''}</h2>
+            <div className="project-videos-container">
+              {(Array.isArray(project.videoUrl) ? project.videoUrl : [project.videoUrl]).map((videoSrc, index) => (
+                <div key={index} className="project-video-container">
+                  <video 
+                    controls 
+                    className="project-video"
+                    poster={project.bannerImage}
+                  >
+                    <source src={videoSrc} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Process Documentation Images Section */}
+        {project.processImages && project.processImages.length > 0 && (
+          <section className="project-section">
+            <h2 className="project-section-title">Process Documentation</h2>
+            <div className="process-images-gallery">
+              {project.processImages.map((imageSrc, index) => (
+                <img
+                  key={index}
+                  src={imageSrc}
+                  alt={`Process documentation page ${index + 1}`}
+                  className="process-image"
+                  loading="lazy"
+                />
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Contributions Section */}
         {project.contributions.length > 0 && (
           <section className="project-section">

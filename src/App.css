@@ -762,6 +762,50 @@
   color: #7D5A3D;
 }
 
+/* Video Embed Styles */
+.project-videos-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.project-video-container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(131, 74, 59, 0.15);
+  background: #1a1a1a;
+}
+
+.project-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  background: #1a1a1a;
+}
+
+/* Process Documentation Images Gallery */
+.process-images-gallery {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.process-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(131, 74, 59, 0.15);
+  display: block;
+}
+
 /* Footer */
 .project-detail-footer {
   background: #FFE8E0;
@@ -870,6 +914,13 @@
 
   .project-tag {
     padding: calc(5 / 768 * 100vw) calc(12 / 768 * 100vw);
+  }
+
+  /* Video & Process Images - Tablet */
+  .project-videos-container,
+  .project-video-container,
+  .process-images-gallery {
+    max-width: 100%;
   }
 }
 
@@ -1326,5 +1377,18 @@
 
   .contact-copyright {
     font-size: calc(10 / 375 * 100vw);
+  }
+
+  /* Video & Process Images - Mobile */
+  .project-video-container {
+    border-radius: 8px;
+  }
+
+  .process-images-gallery {
+    gap: calc(16 / 375 * 100vw);
+  }
+
+  .process-image {
+    border-radius: 8px;
   }
 }
