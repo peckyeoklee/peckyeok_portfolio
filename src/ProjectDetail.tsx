@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getProjectBySlug } from './projectsData';
+import { HiOutlineMail } from "react-icons/hi";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 
 function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -189,13 +191,13 @@ function ProjectDetail() {
           <p className="footer-copyright">© 2026 Peck Yeok</p>
           <div className="footer-social-links">
             <a href="mailto:peckieyeokie@email.com" aria-label="Email" className="footer-icon-link">
-              ✉
+              <HiOutlineMail />
             </a>
             <a href="https://www.linkedin.com/in/leepeckyeok/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer-icon-link">
-              in
+              <FaLinkedinIn />
             </a>
             <a href="https://github.com/peckyeoklee" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="footer-icon-link">
-              🐙
+              <FaGithub />
             </a>
           </div>
         </div>

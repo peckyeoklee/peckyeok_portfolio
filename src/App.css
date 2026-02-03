@@ -711,7 +711,8 @@
   color: #7D5A3D;
   text-decoration: none;
   transition: color 0.2s ease, transform 0.2s ease;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
 }
 
 .footer-icon-link:hover {
@@ -872,6 +873,9 @@
   border-radius: 20px;
   transition: all 0.3s ease;
   background: rgba(255, 255, 255, 0.5);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .contact-link:hover {
