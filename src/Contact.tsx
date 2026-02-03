@@ -5,13 +5,13 @@ function Contact() {
         <h2 className="contact-title">CONTACT ME</h2>
         <p className="contact-text">let's connect and create something amazing together!</p>
         <div className="contact-links">
-          <a href="mailto:your@email.com" className="contact-link">
+          <a href="mailto:peckieyeokie@email.com" className="contact-link">
             ✉️ Email
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="contact-link">
+          <a href="https://www.linkedin.com/in/leepeckyeok/" target="_blank" rel="noopener noreferrer" className="contact-link">
             💼 LinkedIn
           </a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="contact-link">
+          <a href="https://github.com/peckyeoklee" target="_blank" rel="noopener noreferrer" className="contact-link">
             🐙 GitHub
           </a>
         </div>

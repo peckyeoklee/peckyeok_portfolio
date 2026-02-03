@@ -32,6 +32,12 @@ function Works() {
     },
   ];
 
+  const categorySummaries = {
+    "data": "Building high-performance ML pipelines and NLP models to extract predictive insights from complex datasets.",
+    "web-dev": "Developing scalable web solutions that bridge the gap between advanced data processing and intuitive user interaction.",
+    "design": "From digital interfaces to physical packaging: designing intentional experiences that elevate brand image and usability."
+  };
+
   // Get projects for the selected category
   const currentProjects = getProjectsByCategory(selectedCategory);
 
@@ -92,12 +98,10 @@ function Works() {
         {/* Category Summary Box */}
         <div className="category-summary-box">
           <h3 className="category-summary-title">
-            {selectedCategory.toUpperCase()}
+            {selectedCategory === "web-dev" ? "WEB DEVELOPMENT" : selectedCategory.toUpperCase()}
           </h3>
           <p className="category-summary-text">
-            here is where all my{" "}
-            {selectedCategory === "web-dev" ? "web dev" : selectedCategory}{" "}
-            projects goes!
+            {categorySummaries[selectedCategory]}
           </p>
         </div>
 

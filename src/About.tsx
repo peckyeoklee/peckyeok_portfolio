@@ -5,10 +5,7 @@ function About() {
         <div className="about-text">
           <h2 className="about-title">ABOUT</h2>
           <p className="about-description">
-            i am lee peck yeok...ejifjiejfije
-            efhuehfuehufheu
-            eifhuehfuhe
-            iehfuiehfie
+          Hello! I’m Peck Yeok, but you can call me Pei Pei! ✨
           </p>
         </div>
         <div className="about-illustration">
