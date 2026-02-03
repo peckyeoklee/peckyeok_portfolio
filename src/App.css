@@ -859,8 +859,10 @@
   /* --- Hero Section - Mobile --- */
   /* Shorter hero to shift bears up, overflow: visible allows bears to peek out */
   .hero-page {
-    min-height: 60vh;
-    overflow: hidden;
+    /* Dynamic height: uses 60vh at narrow screens, scales with width at larger screens */
+    /* At 400px: uses 60vh (comfortable). At 700px+: 85vw kicks in for more height */
+    min-height: max(60vh, 95vw);
+    overflow: visible;
   }
 
   .header {
@@ -890,7 +892,8 @@
   }
 
   .decorative-images {
-    height: clamp(200px, 30vh, 999px);
+    /* Scale height with vw to match bear sizing at larger widths */
+    height: clamp(200px, max(30vh, 50vw), 999px);
     gap: 0; /* Reset gap, use negative margins instead */
   }
 
