@@ -37,7 +37,7 @@ function ProjectDetail() {
       {/* Hero Banner */}
       <div className="project-banner">
         <img 
-          src={project.bannerImage} 
+          src={project.image} 
           alt={project.title}
           className="project-banner-image"
         />
@@ -92,9 +92,9 @@ function ProjectDetail() {
                   <video 
                     controls 
                     className="project-video"
-                    poster={project.bannerImage}
+                    preload="metadata"
                   >
-                    <source src={videoSrc} type="video/mp4" />
+                    <source src={`${videoSrc}#t=0.1`} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
@@ -188,11 +188,14 @@ function ProjectDetail() {
         <div className="footer-content">
           <p className="footer-copyright">© 2026 Peck Yeok</p>
           <div className="footer-social-links">
-            <a href="mailto:your.email@example.com" aria-label="Email" className="footer-icon-link">
+            <a href="mailto:peckieyeokie@email.com" aria-label="Email" className="footer-icon-link">
               ✉
             </a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer-icon-link">
+            <a href="https://www.linkedin.com/in/leepeckyeok/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer-icon-link">
               in
+            </a>
+            <a href="https://github.com/peckyeoklee" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="footer-icon-link">
+              🐙
             </a>
           </div>
         </div>
