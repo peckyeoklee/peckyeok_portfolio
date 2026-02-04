@@ -166,7 +166,7 @@
   /* Scales with viewport */
   margin-top: calc(-100 / 1554 * 100vw);
   /* padding: 60px left/right, 80px bottom to keep content inside pink bg */
-  padding: calc(60 / 1554 * 100vw) calc(60 / 1554 * 100vw) calc(100 / 1554 * 100vw);
+  padding: calc(50 / 1554 * 100vw) calc(60 / 1554 * 100vw) calc(0 / 1554 * 100vw);
   background: transparent;
 }
 
@@ -784,8 +784,8 @@
 /* All values calculated relative to 1554px reference width */
 .about-section {
   background-color: #Fffefd;
-  /* padding: 80px horizontal at 1554px */
-  padding: calc(80 / 1554 * 100vw) calc(80 / 1554 * 100vw);
+  /* padding: reduced top (40px) to bring closer to works, 80px sides/bottom at 1554px */
+  padding:  calc(80/ 1554 * 100vw) calc(80 / 1554 * 100vw);
   position: relative;
 }
 
@@ -824,8 +824,12 @@
   font-weight: 400;
   color: #7D5A3D;
   line-height: 1.6;
-  margin: 0;
+  margin: 0 0 1em 0;
   white-space: pre-line;
+}
+
+.about-description:last-of-type {
+  margin-bottom: 0;
 }
 
 .about-illustration {

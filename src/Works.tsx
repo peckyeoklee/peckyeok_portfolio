@@ -17,18 +17,18 @@ function Works() {
       pathId: "data-curve",
     },
     {
-      id: "web-dev" as const,
-      label: "WEB DEV",
-      image: "/images/bear-3.png",
-      color: "#A8C9A0", // green
-      pathId: "webdev-curve",
-    },
-    {
       id: "design" as const,
       label: "DESIGN",
       image: "/images/bear-1.png",
       color: "#8FA8CE", // blue
       pathId: "design-curve",
+    },
+    {
+      id: "web-dev" as const,
+      label: "WEB DEV",
+      image: "/images/bear-3.png",
+      color: "#A8C9A0", // green
+      pathId: "webdev-curve",
     },
   ];
 
