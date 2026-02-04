@@ -4,6 +4,21 @@ import { getProjectBySlug } from './projectsData';
 import { HiOutlineMail } from "react-icons/hi";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 
+// Helper function to bold text before the first colon
+const formatContribution = (text: string) => {
+  const colonIndex = text.indexOf(':');
+  if (colonIndex === -1) return text;
+  
+  const boldPart = text.slice(0, colonIndex + 1);
+  const restPart = text.slice(colonIndex + 1);
+  
+  return (
+    <>
+      <strong>{boldPart}</strong>{restPart}
+    </>
+  );
+};
+
 function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
@@ -39,7 +54,7 @@ function ProjectDetail() {
       {/* Hero Banner */}
       <div className="project-banner">
         <img 
-          src={project.image} 
+          src={project.bannerImage || project.image} 
           alt={project.title}
           className="project-banner-image"
         />
@@ -129,7 +144,7 @@ function ProjectDetail() {
             <h2 className="project-section-title">Contributions</h2>
             <ul className="project-bullet-list">
               {project.contributions.map((contribution, index) => (
-                <li key={index}>{contribution}</li>
+                <li key={index}>{formatContribution(contribution)}</li>
               ))}
             </ul>
           </section>

@@ -24,11 +24,11 @@ export const allProjects: Project[] = [
     slug: 'uwaterloo-kaggle',
     id: 'data-1',
     title: 'UWATERLOO KAGGLE',
-    image: '/images/uwaterloo.jpg',
+    image: '/images/uwaterloo.png',
     year: '2024',
     tags: ['Machine Learning', 'Python', 'Kaggle', 'Ensemble Methods'],
     subtitle: 'Household Poverty Classification Challenge',
-    bannerImage: '/images/data-project-1.jpg',
+    bannerImage: '/images/uwaterloo.png',
     overview: 'During my exchange at the University of Waterloo, my teammate Kenneth and I took on a high-stakes Kaggle challenge as part of our Machine Learning coursework. Our goal was to build a model capable of accurately classifying household poverty levels. Competing against a field of both undergraduate and graduate students, we developed a sophisticated ML pipeline that ultimately secured us a Top 6 finish university-wide. 🏆',
     contributions: [
       'Ensemble Mastery: This was a deep dive into the power of "strength in numbers." We experimented heavily with XGBoost, Gradient Boosting, and SVMs, learning how to tune hyperparameters to squeeze out every bit of predictive power.',
@@ -37,22 +37,6 @@ export const allProjects: Project[] = [
       'Collaboration & Efficiency: Working in a tight-knit duo meant we had to communicate clearly and divide tasks effectively to iterate fast.'
     ],
     keyFeatures: [
-      {
-        title: 'Ensemble Mastery',
-        description: 'This was a deep dive into the power of "strength in numbers." We experimented heavily with XGBoost, Gradient Boosting, and SVMs, learning how to tune hyperparameters to squeeze out every bit of predictive power.'
-      },
-      {
-        title: 'The Art of Stacking',
-        description: 'We didn\'t just stop at individual models; we implemented complex stacking and ensemble methods to minimize variance and improve our generalization on the leaderboard.'
-      },
-      {
-        title: 'Feature Engineering',
-        description: 'I realized that the best model in the world is only as good as the data you feed it. We spent significant time engineering features that captured the nuances of household demographics.'
-      },
-      {
-        title: 'Collaboration & Efficiency',
-        description: 'Working in a tight-knit duo meant we had to communicate clearly and divide tasks effectively to iterate fast.'
-      },
       {
         title: 'The "Cherry on Top" (The Video)',
         description: 'Beyond the code, we had to document our process. I took the lead on directing and producing our project video to give a behind-the-scenes look at our methodology. It turns out that explaining complex stacking methods is a lot easier when you have a bit of creative direction!'
@@ -74,7 +58,7 @@ export const allProjects: Project[] = [
     year: '2024',
     tags: ['AI/ML', 'NLP', 'Healthcare', 'LLM', 'XAI'],
     subtitle: 'XAI-Powered Clinical Documentation & Teleconsultation',
-    bannerImage: '/images/data-project-2.jpg',
+    bannerImage: '/images/meditrace.jpg',
     overview: 'Teleconsultation promised efficiency, but it delivered a "documentation tax." Clinicians are currently drowning in a high-cognitive-load task: cleaning up messy, noisy transcripts and manually restructuring them into formal SOAP (Subjective, Objective, Assessment, Plan) notes. I developed a Human-AI solution, which is a modular, two-stage LLM architecture that transforms raw clinical dialogue into structured medical data. The system doesn\'t just summarize; it categorizes and verifies, saving clinicians an estimated 3–5 minutes per patient encounter.',
     contributions: [
       'Engineering for High-Stakes Environments: I learned that in healthcare, accuracy isn\'t enough. You need accountability. Designing a "Human-in-the-Loop" system taught me how to balance automation with the clinician\'s ultimate responsibility for patient safety.',
@@ -92,22 +76,6 @@ export const allProjects: Project[] = [
         description: 'We implemented a Source Tracing UI. This allows clinicians to hover over any generated note and instantly see the exact snippet of the raw transcript it was derived from.'
       },
       {
-        title: 'Engineering for High-Stakes Environments',
-        description: 'I learned that in healthcare, accuracy isn\'t enough. You need accountability. Designing a "Human-in-the-Loop" system taught me how to balance automation with the clinician\'s ultimate responsibility for patient safety.'
-      },
-      {
-        title: 'Mitigating Hallucination',
-        description: 'By confining LLMs to specific, modular tasks (refinement vs. extraction) rather than one "do-it-all" prompt, I learned how to drastically reduce the risk of AI hallucinations.'
-      },
-      {
-        title: 'Local Deployment & Privacy',
-        description: 'I gained experience working with Open-Source models for on-premises deployment. This was crucial to ensure sensitive patient data never left the local environment, adhering to strict healthcare privacy regulations.'
-      },
-      {
-        title: 'Dealing with "Dirty" Data',
-        description: 'Real-world audio is noisy. I learned how to build robust refinement stages that can handle conversational fragments and accented speech without losing the underlying medical meaning.'
-      },
-      {
         title: 'The Impact',
         description: 'Our solution bridges the gap between raw conversational speech and the structured mandates of Electronic Medical Records (EMRs). By turning a 10-minute manual task into a 30-second verification process, we directly address the primary driver of physician burnout.'
       }
@@ -117,7 +85,10 @@ export const allProjects: Project[] = [
       { label: 'Output Format', value: 'SOAP Notes, EMR-Ready Fields' },
       { label: 'Impact', value: '10-minute task → 30-second verification' }
     ],
-    links: []
+    links: [],
+    processImages: [
+      '/images/userpersona.png'
+    ]
   },
   {
     slug: 'qwen-sentiment-analysis',
@@ -127,7 +98,7 @@ export const allProjects: Project[] = [
     year: '2024',
     tags: ['NLP', 'Deep Learning', 'LLM', 'LoRA', 'Fine-Tuning'],
     subtitle: 'Sentiment Analysis Fine-Tuning Strategies',
-    bannerImage: '/images/data-project-3.jpg',
+    bannerImage: '/images/imdb.jpg',
     overview: 'In this technical deep dive, I implemented a comprehensive sentiment analysis pipeline using the Qwen3-0.6B (600M parameter) model. The project focused on classifying 50,000 IMDB movie reviews by comparing three distinct Large Language Model (LLM) strategies. My goal was to analyze the trade-offs between raw performance, computational demand, and parameter efficiency.',
     contributions: [
       'The Power of LoRA: I learned how to drastically reduce memory usage and training time without sacrificing significant accuracy. Understanding how to freeze the backbone while training adapters is a game-changer for deploying models on limited hardware.',
@@ -147,22 +118,6 @@ export const allProjects: Project[] = [
       {
         title: 'LoRA (Low-Rank Adaptation)',
         description: 'Implementing parameter-efficient fine-tuning by injecting trainable low-rank matrices. This allowed us to achieve near-SFT performance while only training a fraction of the total weights.'
-      },
-      {
-        title: 'The Power of LoRA',
-        description: 'I learned how to drastically reduce memory usage and training time without sacrificing significant accuracy. Understanding how to freeze the backbone while training adapters is a game-changer for deploying models on limited hardware.'
-      },
-      {
-        title: 'Model Benchmarking',
-        description: 'I gained experience in setting up rigorous evaluation metrics to compare base models vs. fine-tuned versions, specifically looking at how "instruction following" improves after SFT.'
-      },
-      {
-        title: 'Hugging Face Ecosystem',
-        description: 'I deepened my expertise in using the transformers, peft (Parameter-Efficient Fine-Tuning), and datasets libraries to handle large-scale NLP tasks.'
-      },
-      {
-        title: 'Computational Trade-offs',
-        description: 'This project taught me the "economics" of AI—deciding when a project justifies the cost of full fine-tuning versus when a zero-shot or LoRA approach is "good enough" for production.'
       }
     ],
     implementation: [
@@ -170,6 +125,9 @@ export const allProjects: Project[] = [
       { label: 'Libraries', value: 'PyTorch, Hugging Face (Transformers, PEFT, Accelerate)' },
       { label: 'Dataset', value: 'IMDB (50,000 reviews)' },
       { label: 'Hardware Optimization', value: 'LoRA, Gradient Checkpointing' }
+    ],
+    processImages: [
+      '/images/resultsnlp.png'
     ],
     links: []
   },
@@ -182,7 +140,7 @@ export const allProjects: Project[] = [
     year: '2024',
     tags: ['React', 'Front-End', 'UI/UX', 'Scheduling'],
     subtitle: 'Resource Allocation Scheduling Application',
-    bannerImage: '/images/webdev-project-1.jpg',
+    bannerImage: '/images/ganttweb.png',
     overview: 'I led the front-end development team in building a specialized scheduling application designed to solve complex resource allocation problems. Coming from an Engineering Systems and Design background, this project marked my first major step into the world of front-end engineering. I took the initiative to lead the UI/UX efforts, building an interactive interface that visualizes and communicates with sophisticated back-end scheduling algorithms.',
     contributions: [
       'The React Ecosystem: Since this was my first real front-end role, I had to rapidly learn the fundamentals of React, state management, and component-based architecture.',
@@ -191,22 +149,6 @@ export const allProjects: Project[] = [
       'The Importance of Feedback Loops: This project taught me the value of user feedback. For example, I realized in hindsight that incorporating a "loading state" or progress bar for long-running algorithm generations is crucial for a smooth user experience.'
     ],
     keyFeatures: [
-      {
-        title: 'The React Ecosystem',
-        description: 'Since this was my first real front-end role, I had to rapidly learn the fundamentals of React, state management, and component-based architecture.'
-      },
-      {
-        title: 'Technical Leadership',
-        description: 'Leading a team where everyone was "new" to the stack taught me the importance of collaborative learning. We navigated the hurdles of web development together, turning a daunting task into a successful build.'
-      },
-      {
-        title: 'UI/UX for Complex Data',
-        description: 'I learned how to translate dense algorithmic output into a visual Gantt Chart that is actually intuitive and useful for a user.'
-      },
-      {
-        title: 'The Importance of Feedback Loops',
-        description: 'This project taught me the value of user feedback. For example, I realized in hindsight that incorporating a "loading state" or progress bar for long-running algorithm generations is crucial for a smooth user experience.'
-      },
       {
         title: 'See It In Action',
         description: 'Check out the video below to see how we transformed back-end logic into a functional, visual scheduling tool.'
@@ -230,7 +172,7 @@ export const allProjects: Project[] = [
     year: '2024',
     tags: ['UI/UX', 'Figma', 'User Research', 'Mobile App'],
     subtitle: 'A Trusted Marketplace for In-Home Pet Care',
-    bannerImage: '/images/webdev-project-2.jpg',
+    bannerImage: '/images/petbnb.png',
     overview: 'PetBNB was born out of a desire to solve the "trust gap" in the pet-sitting industry. This project was the culmination of my UI/UX journey at SUTD—a fast-paced, 4-month intensive where we took an idea from raw user research to a fully functional app. I led the design for the Pet Owner experience, focusing on creating a seamless flow from sitter discovery to real-time peace of mind.',
     contributions: [
       'Rapid Iteration: We went through three major design iterations in just four months. I learned how to "kill my darlings"—discarding designs that didn\'t work after user testing to make room for more intuitive solutions.',
@@ -254,22 +196,6 @@ export const allProjects: Project[] = [
       {
         title: 'The "Trust Tracker"',
         description: 'Inspired by the seamlessness of AirTags, I ideated and designed an integrated pet tracker and activity log. This allows sitters to send one-tap updates, photos, and GPS summaries, ensuring owners never feel disconnected.'
-      },
-      {
-        title: 'Rapid Iteration',
-        description: 'We went through three major design iterations in just four months. I learned how to "kill my darlings"—discarding designs that didn\'t work after user testing to make room for more intuitive solutions.'
-      },
-      {
-        title: 'User Research as a Compass',
-        description: 'Conducting deep user research taught me that "features" aren\'t as important as "feelings." The integration of the pet tracker wasn\'t just a technical add-on; it was a psychological solution to user anxiety.'
-      },
-      {
-        title: 'Bridging Design and Development',
-        description: 'Seeing my Figma designs come to life in a functional app was incredibly rewarding. I learned how to communicate design specs to the development side to ensure the final product matched the pixel-perfect vision.'
-      },
-      {
-        title: 'Information Architecture',
-        description: 'Managing a two-sided marketplace (Owner vs. Sitter) required a complex but clear hierarchy to ensure both users had a streamlined experience without being overwhelmed by data.'
       },
       {
         title: 'The Result',
@@ -301,7 +227,7 @@ export const allProjects: Project[] = [
     year: '2024',
     tags: ['NLP', 'XAI', 'GPT-2', 'Conversational AI', 'Multilingual'],
     subtitle: 'Explainable NLP Conversational Agent',
-    bannerImage: '/images/webdev-project-3.jpg',
+    bannerImage: '/images/emotionaware.png',
     overview: 'The core objective of this project was to dismantle the "black box" of emotional AI. Working in a research-focused group, we integrated eXplainable AI (XAI) directly into a multilingual conversational agent. While traditional AI often gives a result without context, our system was designed to engage users with emotionally-tuned responses while providing a precise, verifiable explanation for every interaction. This project served as an advanced extension of our work with GPT-2, pushing the boundaries of how machines interpret and explain human sentiment.',
     contributions: [
       'Dismantling the Black Box: I gained deep insights into XAI methodologies, learning how to bridge the gap between complex model outputs and human-readable explanations. It\'s one thing for a model to detect "Anger," but another to explain why (e.g., highlighting specific linguistic tokens or syntax).',
@@ -309,18 +235,6 @@ export const allProjects: Project[] = [
       'Research & Development Rigor: This project was research-heavy. I spent a significant amount of time diving into recent papers on Integrated Gradients and understanding the "trend" of interpretability in the current AI landscape.'
     ],
     keyFeatures: [
-      {
-        title: 'Dismantling the Black Box',
-        description: 'I gained deep insights into XAI methodologies, learning how to bridge the gap between complex model outputs and human-readable explanations. It\'s one thing for a model to detect "Anger," but another to explain why (e.g., highlighting specific linguistic tokens or syntax).'
-      },
-      {
-        title: 'Multilingual Challenges',
-        description: 'We didn\'t just stick to English. I learned about the complexities of cross-lingual sentiment analysis, including how different cultures express emotion and how to handle low-resource languages within an NLP pipeline.'
-      },
-      {
-        title: 'Research & Development Rigor',
-        description: 'This project was research-heavy. I spent a significant amount of time diving into recent papers on Integrated Gradients and understanding the "trend" of interpretability in the current AI landscape.'
-      },
       {
         title: 'The Challenge & The "Fun"',
         description: 'Moving from a standard GPT-2 generation task to an "Emotionally Aware + Explainable" system was a steep climb. We had to balance the model\'s creative generation with the rigid logic required for XAI. It was a puzzle of engineering and ethics: ensuring the AI was helpful, empathetic, and, most importantly, transparent.'
@@ -360,22 +274,6 @@ export const allProjects: Project[] = [
     ],
     keyFeatures: [
       {
-        title: 'End-to-End Research',
-        description: 'I learned how to move from "gut feeling" to data-driven design. This involved conducting competitive research to see how market leaders handled similar flows and performing user research to uncover actual pain points.'
-      },
-      {
-        title: 'Visual Storytelling',
-        description: 'I discovered how much typography, color palettes, and spacing impact a user\'s perception of a brand. I had to ensure the "fun" aesthetic didn\'t come at the cost of readability.'
-      },
-      {
-        title: 'Iterative Design',
-        description: 'This was my first time building a project from the ground up—from initial sketches and wireframes to high-fidelity prototypes. I learned that UX is never "done"; it\'s about constant refinement.'
-      },
-      {
-        title: 'Usability Heuristics',
-        description: 'I applied industry-standard principles to ensure the new user flow felt natural and reduced cognitive load for returning customers.'
-      },
-      {
         title: 'The Deep Dive',
         description: 'Below is the full documentation of my process.'
       }
@@ -413,22 +311,6 @@ export const allProjects: Project[] = [
       {
         title: 'The Design Philosophy',
         description: 'The logo features a custom, hand-illustrated icon integrated into the typography, evoking an "organic and artisanal" feel. I chose an earthy, bread-crust brown to anchor the brand, moving away from sterile, corporate colors to something more inviting and home-baked.'
-      },
-      {
-        title: 'Symbolism in Typography',
-        description: 'I experimented with how to subtly integrate the product (the shiopan roll) directly into the logomark without making it feel cluttered.'
-      },
-      {
-        title: 'Brand Storytelling',
-        description: 'I learned that a brand is more than just a logo; it\'s an atmosphere. I worked on conceptualizing how this logo would live on different touchpoints—from wax paper packaging to store signage.'
-      },
-      {
-        title: 'Creative Freedom & Constraints',
-        description: 'Without a client brief, I had to set my own constraints to ensure the design remained cohesive. It taught me how to self-critique and refine a concept through multiple "internal" iterations.'
-      },
-      {
-        title: 'Vector Illustration for Branding',
-        description: 'I used this project to further sharpen my skills in translating a hand-drawn sketch into a clean, scalable vector format that retains its "human" touch.'
       }
     ],
     implementation: [
@@ -465,22 +347,6 @@ export const allProjects: Project[] = [
       'Creative Directing: Since I was leading the creative effort, I had to balance my artistic vision with the client\'s business objectives, ensuring the final result was both beautiful and "on-brand."'
     ],
     keyFeatures: [
-      {
-        title: 'Targeted Brand Positioning',
-        description: 'I learned how to design for a specific demographic. Moving toward a "retro" vibe required a deep understanding of nostalgia-driven design trends that appeal to young professionals.'
-      },
-      {
-        title: 'Vector Mastery (Adobe Illustrator)',
-        description: 'This project was my "bootcamp" for professional vector design. I mastered the use of the Pen tool, pathfinders, and color swatches to create high-resolution, print-ready assets.'
-      },
-      {
-        title: 'Designing for Print',
-        description: 'Unlike web design, physical packaging requires precision regarding bleed lines, typography legibility at small scales, and color profiles (CMYK vs. RGB).'
-      },
-      {
-        title: 'Creative Directing',
-        description: 'Since I was leading the creative effort, I had to balance my artistic vision with the client\'s business objectives, ensuring the final result was both beautiful and "on-brand."'
-      },
       {
         title: 'Fun Fact',
         description: 'This was one of those projects where "work" didn\'t feel like work. Being able to blend my love for art with a professional commission was a massive milestone for my creative career!'

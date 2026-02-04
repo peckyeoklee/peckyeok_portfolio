@@ -405,6 +405,11 @@
   display: block;
 }
 
+/* Specific image positioning overrides */
+.project-image[src*="uwaterloo"] {
+  object-position: 97% center;
+}
+
 /* Project Title */
 .project-title {
   font-family: "SA Long Beach", cursive, sans-serif;
