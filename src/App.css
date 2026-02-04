@@ -349,7 +349,8 @@
   grid-template-columns: repeat(2, 1fr);
   /* gap: 30px 26px at 1554px - SMALLER */
   gap: calc(24 / 1554 * 100vw) calc(24 / 1554 * 100vw);
-  align-items: start;
+  /* Stretch items to equal height in each row */
+  align-items: stretch;
 }
 
 /* Polaroid-style Project Cards */
@@ -359,6 +360,7 @@
   padding: 0;
   cursor: pointer;
   width: 100%;
+  height: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -380,6 +382,10 @@
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
+  /* Flex layout for consistent card heights */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .project-card-polaroid:hover .polaroid-frame {
@@ -395,6 +401,8 @@
   border-radius: 1px;
   /* 10px margin at 1554px - SMALLER */
   margin-bottom: calc(10 / 1554 * 100vw);
+  /* Don't shrink the image */
+  flex-shrink: 0;
 }
 
 .project-image {
@@ -425,27 +433,39 @@
   margin-bottom: calc(8 / 1554 * 100vw);
   line-height: 1.3;
   letter-spacing: 0.02em;
+  /* Single line title with ellipsis */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Polaroid Tags */
 .polaroid-tags {
   display: flex;
+  /* Allow wrapping to 2 lines */
   flex-wrap: wrap;
-  /* 5px gap at 1554px - SMALLER */
+  /* 5px gap at 1554px */
   gap: calc(5 / 1554 * 100vw);
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  /* Fixed height for 2 lines of tags - consistent card heights */
+  /* Extra 4px to prevent border clipping */
+  height: calc(46 / 1554 * 100vw);
+  overflow: hidden;
+  /* Push tags to bottom of card */
+  margin-top: auto;
 }
 
 .polaroid-tag {
   font-family: "Garet", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  /* 9px at 1554px - SMALLER */
+  /* 9px at 1554px */
   font-size: calc(9 / 1554 * 100vw);
   color: #B89080;
   background: transparent;
   border: 1px solid #E8D5CF;
   border-radius: 10px;
-  /* padding: 3px 8px at 1554px - SMALLER */
+  /* padding: 3px 8px at 1554px */
   padding: calc(3 / 1554 * 100vw) calc(8 / 1554 * 100vw);
   font-weight: 400;
   text-transform: lowercase;
@@ -918,8 +938,8 @@
   }
 
   .site-name {
-    /* 32px at 375px */
-    font-size: calc(32 / 375 * 100vw);
+    /* 32px at 375px, min 24px */
+    font-size: max(24px, calc(32 / 375 * 100vw));
   }
 
   .nav {
@@ -1010,13 +1030,15 @@
   }
 
   .works-title {
-    font-size: calc(28 / 375 * 100vw);
-    margin-bottom: calc(6 / 375 * 100vw);
+    /* min 22px */
+    font-size: max(22px, calc(28 / 375 * 100vw));
+    margin-bottom: max(5px, calc(6 / 375 * 100vw));
   }
 
   .works-subtitle {
-    font-size: calc(12 / 375 * 100vw);
-    margin-bottom: calc(12 / 375 * 100vw);
+    /* min 11px */
+    font-size: max(11px, calc(12 / 375 * 100vw));
+    margin-bottom: max(10px, calc(12 / 375 * 100vw));
   }
 
   /* Category buttons - horizontal row, smaller */
@@ -1038,7 +1060,8 @@
   }
 
   .curved-label {
-    font-size: calc(9 / 375 * 100vw);
+    /* min 8px */
+    font-size: max(8px, calc(9 / 375 * 100vw));
     letter-spacing: 0.05em;
   }
 
@@ -1055,48 +1078,77 @@
   }
 
   .category-summary-title {
-    font-size: calc(20 / 375 * 100vw);
-    margin-bottom: calc(8 / 375 * 100vw);
+    /* min 16px */
+    font-size: max(16px, calc(20 / 375 * 100vw));
+    margin-bottom: max(6px, calc(8 / 375 * 100vw));
   }
 
   .category-summary-text {
-    font-size: calc(12 / 375 * 100vw);
+    /* min 11px */
+    font-size: max(11px, calc(12 / 375 * 100vw));
   }
 
   /* Polaroid grid - 2 columns */
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: calc(16 / 375 * 100vw) calc(12 / 375 * 100vw);
+    gap: max(12px, calc(16 / 375 * 100vw)) max(10px, calc(12 / 375 * 100vw));
+    /* Stretch items to equal height in each row */
+    align-items: stretch;
   }
 
   .project-card-polaroid {
     max-width: 100%; /* Fill grid cell on mobile */
+    height: 100%;
   }
 
   .polaroid-frame {
-    padding: calc(8 / 375 * 100vw);
-    padding-bottom: calc(24 / 375 * 100vw);
+    padding: max(6px, calc(8 / 375 * 100vw));
+    padding-bottom: max(18px, calc(24 / 375 * 100vw));
     border-radius: 6px;
+    /* Maintain flex layout from desktop */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
   .polaroid-image-container {
-    margin-bottom: calc(8 / 375 * 100vw);
+    margin-bottom: max(6px, calc(8 / 375 * 100vw));
     border-radius: 2px;
+    /* Don't shrink the image */
+    flex-shrink: 0;
   }
 
   .project-title {
-    font-size: calc(10 / 375 * 100vw);
-    margin-bottom: calc(6 / 375 * 100vw);
+    /* min 10px */
+    font-size: max(10px, calc(10 / 375 * 100vw));
+    margin-bottom: max(5px, calc(6 / 375 * 100vw));
+    margin-top: max(8px, calc(10 / 375 * 100vw));
+    /* Single line title with ellipsis */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .polaroid-tags {
-    gap: calc(4 / 375 * 100vw);
+    gap: max(3px, calc(4 / 375 * 100vw));
+    /* Allow wrapping to 2 lines */
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    /* Fixed height for 2 lines of tags - consistent card heights */
+    /* Extra space to prevent border clipping */
+    height: max(32px, calc(36 / 375 * 100vw));
+    overflow: hidden;
+    /* Push tags to bottom of card */
+    margin-top: auto;
   }
 
   .polaroid-tag {
-    font-size: calc(7 / 375 * 100vw);
-    padding: calc(2 / 375 * 100vw) calc(6 / 375 * 100vw);
+    /* min 7px */
+    font-size: max(7px, calc(7 / 375 * 100vw));
+    padding: max(2px, calc(2 / 375 * 100vw)) max(5px, calc(6 / 375 * 100vw));
     border-radius: 6px;
+    white-space: nowrap;
   }
 
   /* --- About Section - Mobile --- */
@@ -1115,12 +1167,14 @@
   }
 
   .about-title {
-    font-size: calc(28 / 375 * 100vw);
-    margin-bottom: calc(12 / 375 * 100vw);
+    /* min 22px */
+    font-size: max(22px, calc(28 / 375 * 100vw));
+    margin-bottom: max(10px, calc(12 / 375 * 100vw));
   }
 
   .about-description {
-    font-size: calc(13 / 375 * 100vw);
+    /* min 12px */
+    font-size: max(12px, calc(13 / 375 * 100vw));
   }
 
   .about-illustration {
@@ -1137,13 +1191,15 @@
   }
 
   .contact-title {
-    font-size: calc(24 / 375 * 100vw);
-    margin-bottom: calc(10 / 375 * 100vw);
+    /* min 18px */
+    font-size: max(18px, calc(24 / 375 * 100vw));
+    margin-bottom: max(8px, calc(10 / 375 * 100vw));
   }
 
   .contact-text {
-    font-size: calc(12 / 375 * 100vw);
-    margin-bottom: calc(20 / 375 * 100vw);
+    /* min 11px */
+    font-size: max(11px, calc(12 / 375 * 100vw));
+    margin-bottom: max(16px, calc(20 / 375 * 100vw));
   }
 
   .contact-links {
@@ -1154,11 +1210,13 @@
   }
 
   .contact-link {
-    font-size: calc(12 / 375 * 100vw);
-    padding: calc(10 / 375 * 100vw) calc(20 / 375 * 100vw);
+    /* min 11px */
+    font-size: max(11px, calc(12 / 375 * 100vw));
+    padding: max(8px, calc(10 / 375 * 100vw)) max(16px, calc(20 / 375 * 100vw));
   }
 
   .contact-copyright {
-    font-size: calc(10 / 375 * 100vw);
+    /* min 9px */
+    font-size: max(9px, calc(10 / 375 * 100vw));
   }
 }
